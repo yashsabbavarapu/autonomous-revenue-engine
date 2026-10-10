@@ -121,6 +121,28 @@ hooksmith generate --input vanta.json --strict
 dealintel ask "how do you compare on SOC 2 automation?"
 ```
 
+What the last mile looks like. A draft written by a human (or another tool) goes through the redliner before it can reach a prospect:
+
+```
+$ hooksmith validate --input fixtures/sample_lead.json \
+    --draft fixtures/hallucinated_draft.txt --subject "Your Series C"
+
+1/1 redlined.
+Linear (linear.app) - validating draft
+
+[Manual draft] FAIL
+  Subject: [REDLINED: Unverified claim] Your Series C
+
+  [REDLINED: Unverified claim] Congrats on closing the $50M Series C led by Andreessen Horowitz last quarter.
+  ✗ [REDLINED: Unverified claim] funding round not present in lead record: 'Series C'
+  ✗ [REDLINED: Unverified claim] dollar figure not present in lead record: '$50M'
+  ✗ [REDLINED: Unverified claim] named entity not present in lead record: 'Andreessen Horowitz'
+  ...
+```
+
+No verified signal, no send. That is the whole thesis in one screen.
+
+
 The infrastructure layer composes in Python, independently of the pipeline:
 
 ```python
