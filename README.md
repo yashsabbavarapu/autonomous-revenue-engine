@@ -1,4 +1,5 @@
 # Autonomous Revenue Engine
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
 Nine systems that take a company from a messy CSV row to a cited, budget-bounded sales conversation, plus the AI infrastructure underneath that keeps them honest.
 
